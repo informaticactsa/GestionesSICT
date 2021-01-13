@@ -1,0 +1,7 @@
+{
+  "name": "GestionesCT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
