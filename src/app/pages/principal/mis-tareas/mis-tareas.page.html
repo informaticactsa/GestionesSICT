@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Mis tareas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="trash-bin"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- [(ngModel)]="searchTerm" (ionChange)="searchChanged($event)" -->
+  <ion-searchbar  ></ion-searchbar>
+ 
+  <ion-item>
+    <ion-label>Filtrar</ion-label><!-- [(ngModel)]="type" (ionChange)="searchChanged($event)" -->
+    <ion-datetime value="2019-10-01T15:43:40.394Z" display-timezone="utc"></ion-datetime>
+    <!-- <ion-select >
+      <ion-select-option value="">Todos</ion-select-option>
+      <ion-select-option value="movie">Hoy</ion-select-option>
+      <ion-select-option value="series">Ayer</ion-select-option>
+      <ion-select-option value="episode">Antier</ion-select-option>
+    </ion-select> -->
+  </ion-item>
+
+  <ion-list>
+
+    <!-- Multi-line sliding item with icon options on both sides -->
+    <ion-item-sliding id="item100" *ngFor="let item of listaTareas">
+      <ion-item (click)="mostrarDetalleTarea(item)" >
+           <ion-label >
+          <h2>{{item.titulo}}</h2>
+          <p>{{item.contenido}}</p>
+          </ion-label>
+        <ion-note slot="end">
+          10:45 AM
+        </ion-note>
+      </ion-item>
+     
+
+      <ion-item-options side="start">
+        <ion-item-option (click)="finalizarMistareas(item) ">
+          <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="reAsignarMistareas(item) ">
+          <ion-icon slot="icon-only" name="refresh-circle"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item-options side="end" >
+        <ion-item-option color="danger" (click)="desactivarMistareas(item)">
+          <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+        </ion-item-option>
+        <ion-item-option (click)="imprimirMistareas(item)" >
+          <ion-icon slot="icon-only" name="print"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>

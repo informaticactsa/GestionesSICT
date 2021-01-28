@@ -1,0 +1,192 @@
+<ion-content>
+  <ion-grid>
+
+    <ion-row class="dash">
+      <!-- Dash#1 -->
+      <ion-col offset-4>
+        <ion-card>
+          <ion-row>
+            <ion-col size="3">
+              <div class="centrado-porcentual">
+                <ion-icon style="zoom: 2;" name="cube-outline"></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="header">
+                <ion-card-header>
+                  <ion-card-subtitle>Usuarios</ion-card-subtitle>
+                  <ion-card-title>115</ion-card-title>
+                </ion-card-header>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <!--  -->
+
+      <!-- Dash#2 -->
+      <ion-col>
+        <ion-card>
+          <ion-row>
+            <ion-col size="3">
+              <div class="centrado-porcentual">
+                <ion-icon style="zoom: 2;" name="cube-outline"></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="header">
+                <ion-card-header>
+                  <ion-card-subtitle>Áreas</ion-card-subtitle>
+                  <ion-card-title>15</ion-card-title>
+                </ion-card-header>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <!--  -->
+    </ion-row>
+
+    <ion-row class="dash">
+      <!-- Dash#3 -->
+      <ion-col>
+        <ion-card>
+          <ion-row>
+            <ion-col size="3">
+              <div class="centrado-porcentual">
+                <ion-icon style="zoom: 2;" name="cube-outline"></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="header">
+                <ion-card-header>
+                  <ion-card-subtitle>Tareas</ion-card-subtitle>
+                  <ion-card-title>15</ion-card-title>
+                </ion-card-header>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <!--  -->
+
+      <!-- Dash#4 -->
+      <ion-col offset-4>
+        <ion-card>
+          <ion-row>
+            <ion-col size="3">
+              <div class="centrado-porcentual">
+                <ion-icon style="zoom: 2;" name="cube-outline"></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="header">
+                <ion-card-header>
+                  <ion-card-subtitle>Notificaciones</ion-card-subtitle>
+                  <ion-card-title>15</ion-card-title>
+                </ion-card-header>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <!--  -->
+    </ion-row>
+
+    <!-- Chart#1 -->
+    <ion-row class="card"> 
+      <ion-list-header color="light">Vertical Bar Chart</ion-list-header>
+      <ion-card style="width: 100%;">
+        <ion-card-header>
+          <ion-card-subtitle>Number of Viewers per season for</ion-card-subtitle>
+          <ion-card-title>Game of Thrones</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #barChart></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <!-- Chart#2 -->
+    <ion-row class="card">
+      <ion-list-header color="light">Horizontal Bar Chart</ion-list-header>
+      <ion-card class="welcome-card">
+        <ion-card-header>
+          <ion-card-subtitle>Number of Viewers per season for</ion-card-subtitle>
+          <ion-card-title>Game of Thrones</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #hrzBarChart></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <!-- Chart#3 -->
+    <ion-row class="card">
+      <ion-list-header color="light">Horizontal Bar Chart with Custom height</ion-list-header>
+      <ion-card class="welcome-card">
+        <ion-card-header>
+          <ion-card-subtitle>Number of Viewers per season for</ion-card-subtitle>
+          <ion-card-title>Game of Thrones</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #hrzBarChart2></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <ion-row class="card">
+      <ion-list-header color="light">Horizontal Bar Chart with custom colors</ion-list-header>
+      <ion-card class="welcome-card">
+        <ion-card-header>
+          <ion-card-subtitle>Number of Viewers per season for</ion-card-subtitle>
+          <ion-card-title>Game of Thrones</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #hrzBarChart3></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <ion-row class="card">
+      <ion-list-header color="light">Horizontal Grouped Bar Chart</ion-list-header>
+      <ion-card class="welcome-card">
+        <ion-card-header>
+          <ion-card-subtitle>Number of Viewers per season for</ion-card-subtitle>
+          <ion-card-title>Game of Thrones</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #hrzBarChart4></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <ion-row class="card">
+      <ion-list-header color="light">Stacked Bar Chart</ion-list-header>
+      <ion-card class="welcome-card">
+        <ion-card-header>
+          <ion-card-subtitle>Number of Viewers per season for</ion-card-subtitle>
+          <ion-card-title>Game of Thrones</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #hrzBarChart5></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <ion-row class="card">
+      <ion-list-header color="light">Fetch data from API</ion-list-header>
+      <ion-button padding color="success" (click)="getData()" expand="full">Fetch Data</ion-button>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Number of Viewers per season for</ion-card-subtitle>
+          <ion-card-title>Game of Thrones</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #hrzBarChart6></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

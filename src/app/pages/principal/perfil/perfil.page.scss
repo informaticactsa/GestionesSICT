@@ -1,0 +1,25 @@
+.grid1 {
+    height: 100%;
+    padding: 0px;
+}
+
+.row1 {
+    height: 80%;
+}
+
+.row2 {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-avatar{
+        width: 180px;
+        height: 180px;
+    }
+}

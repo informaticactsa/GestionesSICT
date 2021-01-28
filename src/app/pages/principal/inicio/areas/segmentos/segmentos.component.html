@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="" (click)="cancelar()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-toolbar>
+  <div>
+    <ion-segment *ngIf="segmentos" color="tertiary" (ionChange)="segmentChanged($event)" mode="ios"
+      value="{{valorSegmento}}">
+      <ion-segment-button *ngFor="let item of segmentos" value="{{item.valor}}">
+        {{item.nombre}}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-nav [root]="tareas" *ngIf="valorSegmento === 'tareas'"></ion-nav>
+  <ion-nav [root]="cargos" *ngIf="valorSegmento === 'cargos'"></ion-nav>
+  <ion-nav [root]="subareas" *ngIf="valorSegmento === 'sub-areas'"></ion-nav>
+</ion-content>

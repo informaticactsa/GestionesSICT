@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -6,17 +7,35 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { JwtModule } from '@auth0/angular-jwt';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { environment } from '../environments/environment';
+
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx'
+export function tokenGetter() {
+  return localStorage.getItem("token");
+};
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,   JwtModule.forRoot({
+    config: {
+      tokenGetter: tokenGetter,
+      allowedDomains: environment.whiteList
+    }
+  }), 
+  HttpClientModule
+  ],
   providers: [
+    HttpClient,
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    LocalNotifications
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,15 @@
+/* CSS Sidebar menu */
+
+/* .active-menu {
+    border-left: 5px solid var(--ion-color-danger);
+} */
+
+ion-tab-bar {
+    --background: var(--ion-color-tab-bar);
+
+    ion-tab-button {
+        --color: var(--ion-color-tab-inactive);
+        --color-selected: var(--ion-color-tab-active);
+        --background: var(--ion-color-tab-focused);
+    }
+}

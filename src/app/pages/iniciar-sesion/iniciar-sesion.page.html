@@ -1,0 +1,82 @@
+<ion-content>
+
+  <ion-grid class="grid1">
+
+    <ion-row class="row1">
+      <ion-col>
+        <ion-row class="img-container">
+          <!-- <img style="width: 80px;" src="https://img.icons8.com/bubbles/100/000000/task.png" /> -->
+          <ng-lottie [options]="options" [styles]="styles"></ng-lottie>
+        </ion-row>
+        <ion-row class="img-container" style="padding: 0 !important;">
+          <h1 style="color: white; margin-top: 8px !important;">SICT Gestiones</h1>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row2">
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <form [formGroup]="iniciarSesionForm" autocomplete="off" focusInvalidInput
+    (ngSubmit)="onSubmit(iniciarSesionForm.value)" #inicioSesionForm='ngForm'>
+    <ion-slide>
+
+      <div class="contaier-login">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <h1>Iniciar Sesión</h1>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-list>
+
+                <ion-item>
+                  <ion-icon name="person" class="icon-login"></ion-icon>
+                  <ion-input formControlName="Usuario" type="text" required placeholder="Usuario"></ion-input>
+                </ion-item>
+                <div class="validator_error">
+                  <ng-container *ngFor="let validation of validation_messages.Usuario">
+                    <div class="error-message"
+                      *ngIf="iniciarSesionForm.hasError(validation.type, 'Usuario') && (Usuario.dirty || Usuario.touched || inicioSesionForm.submitted)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <br/>
+
+                <ion-item>
+                  <ion-icon name="lock-closed" class="icon-login"></ion-icon>
+                  <ion-input formControlName="Contrasena" type="password" required placeholder="Contraseña"></ion-input>
+                </ion-item>
+                <div class="validator_error">
+                  <ng-container *ngFor="let validation of validation_messages.Contrasena">
+                    <div class="error-message"
+                      *ngIf="iniciarSesionForm.hasError(validation.type, 'Contrasena') && (Contrasena.dirty || Contrasena.touched || inicioSesionForm.submitted)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button type="submit" shape="round" fill="solid" expand="full">
+                Entrar
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </ion-slide>
+  </form>

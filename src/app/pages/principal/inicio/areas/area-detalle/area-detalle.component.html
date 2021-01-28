@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="cancelar()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-toolbar>
+  <div>
+    <ion-segment *ngIf="segmentos" color="tertiary" (ionChange)="segmentChanged($event)" mode="ios"
+      value="{{valorSegmento}}">
+      <ion-segment-button *ngFor="let item of segmentos" value="{{item.valor}}">
+        {{item.nombre}}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+<!-- <ion-content *ngFor="let item of segmentos">
+  <ion-title *ngIf="valorSegmento === item.valor">{{item.nombre}}</ion-title>
+</ion-content> -->
+
+<ion-content>
+  <div [ngSwitch]="valorSegmento">
+    <ng-container *ngFor="let r of segmentos">
+      <ion-list *ngSwitchCase="r.valor">
+        <ion-list *ngFor="let item of datosSegmentos">
+          <div *ngIf="item.segment == valorSegmento">
+            <ion-item *ngFor="let segment of item.datos">
+              <ion-title>{{segment.name}}</ion-title>
+            </ion-item>
+          </div>
+        </ion-list>
+      </ion-list>
+    </ng-container>
+  </div>
+</ion-content>
+
+<!-- <ion-content *ngIf="valorSegmento === '{{item.valor}}'" *ngFor="let item of segmentos" >
+
+  <ion-title>{{item.nombre}}</ion-title>
+
+  <ion-list *ngFor="let item of listaVisible; let i = index">
+    <ion-item (click)="areaDetalle(item.id, item.name, item.areas)">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="0" offset="0">
+            <ion-icon style="zoom: 2;" name="cube"></ion-icon>
+          </ion-col>
+          <ion-col size="3" offset="1">
+            <ion-row>
+              <ion-title>{{item.name}}</ion-title>
+              <ion-title style="font-size: small; font-weight: 300;">{{item.noAreas}} áreas más...</ion-title>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+</ion-content> -->

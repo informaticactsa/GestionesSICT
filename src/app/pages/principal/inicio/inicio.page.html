@@ -1,0 +1,51 @@
+<!-- Opcion menu toolbar IONIC -->
+<!-- <ion-buttons slot="start">
+  <ion-menu-button autoHide="false"></ion-menu-button>
+</ion-buttons> -->
+
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+  <ion-segment color="tertiary" (ionChange)="segmentChanged($event)" value="tablero">
+    <ion-segment-button value="tablero" layout="icon-start">
+      <ion-label>Tablero</ion-label>
+      <ion-icon name="stats-chart"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="areas" layout="icon-start">
+      <ion-label>Áreas</ion-label>
+      <ion-icon name="people"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <ion-nav [root]="tablero" *ngIf="valorSegmento === 'tablero'"></ion-nav>
+  <ion-nav [root]="areas" *ngIf="valorSegmento === 'areas'"></ion-nav>
+</ion-content>
+
+
+<!-- <app-tablero></app-tablero>
+<app-grupos></app-grupos> -->
+
+<!-- <ion-content> -->
+
+
+<!-- <ion-tabs>
+
+    <ion-tab-bar slot="top" selected-tab="tablero">
+      
+      <ion-tab-button layout="icon-start" tab="tablero">
+        <ion-label>Tablero</ion-label>
+        <ion-icon name="stats-chart"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button layout="icon-start" tab="grupos">
+        <ion-label>Áreas</ion-label>
+        <ion-icon name="people"></ion-icon>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+
+  </ion-tabs> -->
+<!-- </ion-content> -->

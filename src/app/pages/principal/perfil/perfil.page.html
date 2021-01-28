@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Mi perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="grid1">
+
+    <ion-row class="row1 img-container">
+      <div>
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+
+        <div style="text-align: center;">
+          <h3 style="width: 100%;">Reynaldo Oporta</h3>
+          <h5 style="width: 100%;">reysaul98@outlook.com</h5>
+          <ion-button shape="round" fill="outline">Editar</ion-button>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="row2">
+      <ion-button shape="round" (click)="cerrarSesion()">Cerrar sesión</ion-button>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

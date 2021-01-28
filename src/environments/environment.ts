@@ -3,6 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  apiUrl: 'http://192.168.24.55:5000/Api',
+  whiteList: [
+    '192.168.24.55:5001',
+    '192.168.24.55:5000',
+    '192.168.24.60:5000',
+    '192.168.1.23:5001',
+    '192.168.1.23:5001',
+    '192.168.1.12:5002',
+    'env.cargotransnet.com:5002'
+  ],
   production: false
 };
 

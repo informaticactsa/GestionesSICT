@@ -1,0 +1,26 @@
+.header {
+    ion-card-header {
+        padding: 0 !important;
+    }
+}
+
+.centrado-porcentual {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.card {
+    ion-card {
+        width: 100%;
+    }
+}
+
+.dash {
+    ion-card {
+        width: 100%;
+        margin: 0 !important;
+    }
+}

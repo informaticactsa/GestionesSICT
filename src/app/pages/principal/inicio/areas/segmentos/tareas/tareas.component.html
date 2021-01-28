@@ -1,0 +1,21 @@
+<ion-content>
+  <ion-list *ngFor="let item of listaTareas; let i = index">
+    <ion-item (click)="tareaItemComponent(item.name)">
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="0" offset="0">
+            <ion-icon style="zoom: 2;" name="list-circle"></ion-icon>
+          </ion-col>
+          <ion-col size="3" offset="1">
+            <ion-row>
+              <ion-title>{{item.name}}</ion-title>
+              <ion-title style="font-size: small; font-weight: 300;">{{item.responsable}}</ion-title>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
